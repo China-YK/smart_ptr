@@ -60,5 +60,10 @@ int main() {
     // cout<<p3->name<<endl;
 
     // unique_ptr<MyClass>p5(18,"tom");
+
+    unique_ptr<MyClass> p1 = make_unique<MyClass>(18,"tom");
+    auto p2=p1.get();
+    p2->age = 17;
+    cout<<p1->age<<endl;
     return 0; // 程序结束时 p2 析构，自动 delete
 }
