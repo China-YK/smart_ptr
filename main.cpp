@@ -197,9 +197,14 @@ int main() {
     cout<<p->age<<endl;
     cout<<p.use_count()<<endl;
     weak_ptr<MyClass>w=p;
+    if (w.expired())cout<<"xiaohui"<<endl;
+    else cout<<"cunzai"<<endl;
+    w.lock()->age=19;
+    cout<<p->age<<endl;
     cout<<w.use_count()<<endl;
     cout<<p.use_count()<<endl;
     cout<<w.lock()->age<<endl;
+
     return 0;
 }
 //循环引用
